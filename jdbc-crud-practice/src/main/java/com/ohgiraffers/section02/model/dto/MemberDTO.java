@@ -1,25 +1,27 @@
 package com.ohgiraffers.section02.model.dto;
 
-import java.lang.reflect.Member;
-import java.util.Date;
+
+import java.sql.Date;
 
 public class MemberDTO {
-    private String memberID;
+    private int memberID;
     private String memberName;
     private Date memberDate;
 
     public MemberDTO (){}
-    public MemberDTO(String memberID, String memberName, Date memberDate) {
+    public MemberDTO(int memberID) {
+        this.memberID = memberID;
+    }
+    public MemberDTO(int memberID, String memberName, Date memberDate) {
         this.memberID = memberID;
         this.memberName = memberName;
         this.memberDate = memberDate;
     }
-
-    public String getMemberID() {
+    public int getMemberID() {
         return memberID;
     }
 
-    public void setMemberID(String memberID) {
+    public void setMemberID(int memberID) {
         this.memberID = memberID;
     }
 
@@ -37,5 +39,13 @@ public class MemberDTO {
 
     public void setMemberDate(Date memberDate) {
         this.memberDate = memberDate;
+    }
+    @Override
+    public String toString() {
+        return "MemberDTO{" +
+                "memberID=" + memberID +
+                ", memberName='" + memberName + '\'' +
+                ", memberDate=" + memberDate +
+                '}';
     }
 }
